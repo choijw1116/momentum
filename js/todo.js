@@ -10,7 +10,6 @@ let toDos = [];
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)); //toDos에 넣어준 value를 localStorage에 저장
-  //JSON.stringify는 object나 array를 string화 시켜준다
 }
 
 function deleteToDo(event) {
@@ -55,15 +54,8 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 //localStorage에 있는 단순 string을 array로 변환
 const savedToDos = localStorage.getItem(TODOS_KEY); //localStorage에서 저장된 todo value를 가져온다
 
-//localstorage에 저장된 todo value가 존재하지않아 null일 수 있으므로 아래 조건문으로 넣어준다
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   toDos = parsedToDos; //localStorage에 이전데이터가 들어있었다면 toDos에 넣어서 복원
   parsedToDos.forEach(paintToDo); //foreach함수는 각각의 item에 대해 해당 함수를 실행시킨다
 }
-
-// localStorage는 데이터베이스가 아님
-// 데이터를 복사해두는곳
-// 콘솔로 찍어서 보여지는 toDos 배열과 localStorage는 전혀 다른것!
-
-//.filter -> true/false로 구분한다. 기존의 arr이 아니라 새로운 arr을 반환해준다.

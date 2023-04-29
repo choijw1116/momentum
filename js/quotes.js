@@ -50,13 +50,6 @@ const quotes = [
 
 const quote = document.querySelector("#quote span:first-child");
 const author = document.querySelector("#quote span:last-child");
-
-//Math메소드
-// Math.random() -> 0부터 1까지 랜덤한 숫자를 제공한다
-// Math.random() * 10 -> 0부터 10까지 랜덤한 숫자를 제공한다 / 소주점까지의 수를 제공한다
-// Math.round() -> 숫자를 반올림한 integer를 반환해준다
-//Math.ceil() -> 숫자를 올림한 integer를 반환해준다
-//Math.floor() -> 숫자를 내림한 integer를 반환해준다
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
